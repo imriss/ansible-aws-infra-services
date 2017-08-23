@@ -1,0 +1,1 @@
+docker build -t=imriss/ansible-template .
