@@ -1,7 +1,15 @@
-FROM python:2.7.12
+FROM imriss:archlinux
+RUN echo 'Ansible AWS on Arch Linux'
+MAINTAINER Reza Farrahi <imriss@ieee.org>
+LABEL description="Ansible AWS / Arch Linux"
 
-RUN apt-get update && apt-get install -y nano
-ENV EDITOR=nano
+RUN  pacman -Syyu --noconfirm && \
+  pacman -S findutils nano vi --noconfirm && \
+  pacman-db-upgrade && \
+  export editor=nano && \
+  pacman -S --noconfirm python python-yaml wget python-pip && \
+  pip install --upgrade pip && \
+  pip install simplejson 
 
 # Contains the version we need to pull for ansible
 COPY ANSIBLE_DOCKER_ENV /
