@@ -1,4 +1,4 @@
-FROM imriss:archlinux
+FROM imriss/archlinux
 RUN echo 'Ansible AWS on Arch Linux'
 MAINTAINER Reza Farrahi <imriss@ieee.org>
 LABEL description="Ansible AWS / Arch Linux"
