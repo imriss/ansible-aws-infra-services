@@ -20,7 +20,7 @@ case $# in
 	SERVICE_NAME_PARAM="${2}"
 	TARGET_ENV_PARAM="${3}"
 	docker run -it \
-               -v "${PWD}:/project" \
+               -v "${PWD}:/example-cluster" \
                -v ~/.aws:/root/.aws \
                -e "TARGET_ENV=$TARGET_ENV_PARAM" \
                -e "CLUSTER_NAME=$CLUSTER_NAME_PARAM" \
@@ -32,7 +32,7 @@ case $# in
 	CLUSTER_NAME_PARAM="${1}"
 	TARGET_ENV_PARAM="${2}"
 	docker run -it \
-               -v "$PWD:/project" \
+               -v "$PWD:/example-cluster" \
                -v ~/.aws:/root/.aws \
                -e "TARGET_ENV=$TARGET_ENV_PARAM" \
                -e "CLUSTER_NAME=$CLUSTER_NAME_PARAM" \
